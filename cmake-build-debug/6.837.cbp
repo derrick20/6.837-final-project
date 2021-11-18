@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="6.837"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\external\;CMake Files\external\src\;CMake Files\external\src\glm-0.9.9.8\;CMake Files\external\src\glm-0.9.9.8\cmake\;CMake Files\external\src\glm-0.9.9.8\cmake\glm\;CMake Files\external\src\glfw-3.3.2\;CMake Files\external\src\glfw-3.3.2\src\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="assignment4">
+				<Option output="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/assignment4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glad/include"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/imgui"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/imgui/examples"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/stb"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/common"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/include"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glm-0.9.9.8"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 assignment4"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="assignment4/fast">
+				<Option output="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/assignment4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glad/include"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/imgui"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/imgui/examples"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/stb"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/common"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/include"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glm-0.9.9.8"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 assignment4/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="uninstall">
+				<Option working_dir="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/Makefile&quot;  VERBOSE=1 uninstall"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw">
+				<Option output="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/include"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src/Makefile&quot;  VERBOSE=1 glfw"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw/fast">
+				<Option output="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/include"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src"/>
+					<Add directory="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src/Makefile&quot;  VERBOSE=1 glfw/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/ArgParser.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/ArgParser.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/CameraSpec.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/CubeMap.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/CubeMap.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/HitRecord.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/Illuminator.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/Illuminator.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/Octree.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/Octree.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/PerspectiveCamera.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/Ray.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/SceneParser.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/SceneParser.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/Tracer.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/Tracer.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/TracingComponent.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/hittable/HittableBase.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/hittable/Mesh.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/hittable/Mesh.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/hittable/Plane.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/hittable/Plane.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/hittable/Sphere.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/hittable/Sphere.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/hittable/Triangle.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/hittable/Triangle.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/main.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/common/helpers.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/common/helpers.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src/glfw_config.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glad/src/glad.c">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/include/GLFW/glfw3.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/include/GLFW/glfw3native.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/cocoa_init.m">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/cocoa_joystick.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/cocoa_joystick.m">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/cocoa_monitor.m">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/cocoa_platform.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/cocoa_time.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/cocoa_window.m">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/egl_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/egl_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/init.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/input.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/internal.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/mappings.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/monitor.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/nsgl_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/nsgl_context.m">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/osmesa_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/osmesa_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/posix_thread.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/posix_thread.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/vulkan.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/window.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/imgui/examples/imgui_impl_glfw.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/imgui/examples/imgui_impl_glfw.h">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/imgui/examples/imgui_impl_opengl3.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/imgui/examples/imgui_impl_opengl3.h">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/imgui/imgui.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/imgui/imgui.h">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/imgui/imgui_demo.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/imgui/imgui_draw.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/imgui/imgui_widgets.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/Application.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/Application.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/Image.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/Image.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/InputManager.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/InputManager.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/Material.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/MeshData.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/MeshLoader.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/MeshLoader.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/Renderer.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/Renderer.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/Scene.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/Scene.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/SceneNode.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/SceneNode.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/Transform.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/Transform.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/VertexObject.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/VertexObject.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/alias_types.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/cameras/ArcBallCameraNode.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/cameras/ArcBallCameraNode.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/cameras/BasicCameraNode.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/cameras/BasicCameraNode.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/components/CameraComponent.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/components/CameraComponent.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/components/ComponentBase.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/components/ComponentType.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/components/LightComponent.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/components/MaterialComponent.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/components/RenderingComponent.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/components/RenderingComponent.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/components/ShadingComponent.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/components/ShadingComponent.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/debug/AxisNode.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/debug/AxisNode.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/debug/PrimitiveFactory.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/debug/PrimitiveFactory.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/external.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/gl_wrapper/BindGuard.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/gl_wrapper/BindGuard.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/gl_wrapper/BindableBuffer.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/gl_wrapper/BindableBuffer.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/gl_wrapper/IBindable.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/gl_wrapper/VertexArray.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/gl_wrapper/VertexArray.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/gl_wrapper/VertexBuffer.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/lights/AmbientLight.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/lights/DirectionalLight.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/lights/LightBase.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/lights/PointLight.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/parsers/ObjParser.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/parsers/ObjParser.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/shaders/PhongShader.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/shaders/PhongShader.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/shaders/ShaderProgram.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/shaders/ShaderProgram.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/shaders/SimpleShader.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/shaders/SimpleShader.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/utils.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/gloo/utils.hpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glm-0.9.9.8/cmake/glm/glmConfig-version.cmake">
+			<Option virtualFolder="CMake Files\external\src\glm-0.9.9.8\cmake\glm\"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glm-0.9.9.8/cmake/glm/glmConfig.cmake">
+			<Option virtualFolder="CMake Files\external\src\glm-0.9.9.8\cmake\glm\"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\external\src\glfw-3.3.2\"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\external\src\glfw-3.3.2\"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\external\src\glfw-3.3.2\src\"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\external\src\glfw-3.3.2\src\"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\external\src\glfw-3.3.2\src\"/>
+		</Unit>
+		<Unit filename="/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src/glfw_config.h.in">
+			<Option virtualFolder="CMake Files\external\src\glfw-3.3.2\src\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
