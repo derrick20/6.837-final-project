@@ -1582,11 +1582,11 @@ memory
 glad/glad.h
 -
 
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/CameraSpec.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/CameraSpec.hpp
 glm/glm.hpp
 -
 
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/CubeMap.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/CubeMap.hpp
 string
 -
 iostream
@@ -1594,9 +1594,9 @@ iostream
 glm/glm.hpp
 -
 gloo/Image.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/gloo/Image.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/Image.hpp
 
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/HitRecord.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/HitRecord.hpp
 limits
 -
 ostream
@@ -1604,27 +1604,27 @@ ostream
 glm/gtx/string_cast.hpp
 -
 gloo/Material.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/gloo/Material.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/Material.hpp
 
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/Illuminator.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/Illuminator.hpp
 gloo/lights/LightBase.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/gloo/lights/LightBase.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/lights/LightBase.hpp
 gloo/components/LightComponent.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/gloo/components/LightComponent.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/components/LightComponent.hpp
 
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/PerspectiveCamera.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/PerspectiveCamera.hpp
 cmath
 -
 glm/ext/quaternion_geometric.hpp
 -
 gloo/utils.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/gloo/utils.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/utils.hpp
 Ray.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/Ray.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/Ray.hpp
 CameraSpec.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/CameraSpec.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/CameraSpec.hpp
 
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/Ray.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/Ray.hpp
 ostream
 -
 glm/glm.hpp
@@ -1632,9 +1632,9 @@ glm/glm.hpp
 glm/gtx/string_cast.hpp
 -
 
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/Tracer.cpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/Tracer.cpp
 Tracer.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/Tracer.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/Tracer.hpp
 glm/gtx/string_cast.hpp
 -
 stdexcept
@@ -1642,49 +1642,51 @@ stdexcept
 algorithm
 -
 gloo/Transform.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/gloo/Transform.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/Transform.hpp
 gloo/components/MaterialComponent.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/gloo/components/MaterialComponent.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/components/MaterialComponent.hpp
 gloo/lights/AmbientLight.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/gloo/lights/AmbientLight.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/lights/AmbientLight.hpp
 gloo/Image.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/gloo/Image.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/Image.hpp
 Illuminator.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/Illuminator.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/Illuminator.hpp
 HitRecord.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/HitRecord.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/HitRecord.hpp
 
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/Tracer.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/Tracer.hpp
+random
+-
 gloo/Scene.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/gloo/Scene.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/Scene.hpp
 gloo/Material.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/gloo/Material.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/Material.hpp
 gloo/lights/LightBase.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/gloo/lights/LightBase.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/lights/LightBase.hpp
 gloo/components/LightComponent.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/gloo/components/LightComponent.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/components/LightComponent.hpp
 Ray.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/Ray.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/Ray.hpp
 HitRecord.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/HitRecord.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/HitRecord.hpp
 TracingComponent.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/TracingComponent.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/TracingComponent.hpp
 CubeMap.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/CubeMap.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/CubeMap.hpp
 PerspectiveCamera.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/PerspectiveCamera.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/PerspectiveCamera.hpp
 
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/TracingComponent.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/TracingComponent.hpp
 gloo/components/ComponentBase.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/gloo/components/ComponentBase.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/components/ComponentBase.hpp
 gloo/components/ComponentType.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/gloo/components/ComponentType.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/components/ComponentType.hpp
 hittable/HittableBase.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/hittable/HittableBase.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/hittable/HittableBase.hpp
 
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/hittable/HittableBase.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/hittable/HittableBase.hpp
 Ray.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/hittable/Ray.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/hittable/Ray.hpp
 HitRecord.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/assignment_code/assignment4/hittable/HitRecord.hpp
+/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/hittable/HitRecord.hpp
 

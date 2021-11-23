@@ -20,17 +20,29 @@ namespace GLOO {
         tracing_components_ = root.GetComponentPtrsInChildren<TracingComponent>();
         light_components_ = root.GetComponentPtrsInChildren<LightComponent>();
 
+        /// Goal is to estimate the integral of the light transport function
+        /// The Monte Carlo Estimator will have expectation equal to the integral,
+        /// Use N_ trials
+
+        /// Considering the solid angles, the total hemisphere surface area is 2pi,
+        /// and we want a uniform distribution over it -> sample_pdf_ = 1/2pi
         Image image(image_size_.x, image_size_.y);
+        // For each pixel, cast a ray, and update its value in the image.
         for (size_t y = 0; y < image_size_.y; y++) {
             for (size_t x = 0; x < image_size_.x; x++) {
                 // Transforms the pixel to [-1, 1] x [-1, 1]
                 float x_coord = 2.f * x / image_size_.x - 1.f;
                 float y_coord = 2.f * y / image_size_.y - 1.f;
-                // TODO: For each pixel, cast a ray, and update its value in the image.
+
                 Ray ray = camera_.GenerateRay(glm::vec2(x_coord, y_coord));
-                HitRecord record;
-                glm::vec3 color = TraceRay(ray, max_bounces_, record);
-                image.SetPixel(x, y, color);
+                glm::vec3 estimated_color(0);
+                for (int trial = 0; trial < N_; trial++) {
+                    HitRecord record;
+                    glm::vec3 color = TraceRay(ray, max_bounces_, record);
+                    estimated_color += color;
+                }
+                estimated_color /= (float) N_ * sample_pdf_;
+                image.SetPixel(x, y, estimated_color);
             }
         }
         if (output_file.size()) {
@@ -57,7 +69,7 @@ namespace GLOO {
         return hit_comp;
     }
 
-    glm::vec3 Tracer::TraceRay(const Ray &ray, size_t bounces, HitRecord &record) const {
+    glm::vec3 Tracer::TraceRay(const Ray &ray, size_t bounces_left, HitRecord &record) const {
         /// We first find the object first hit by the ray of our eye
         int hit_comp = RayIntersection(ray, record);
         if (hit_comp == -1) {
@@ -112,7 +124,6 @@ namespace GLOO {
                     float clamped_lobe_cosine = glm::max(0.f, glm::dot(reflected_eye, dir_to_light)); // both have magnitude 1
                     glm::vec3 specular_amt = (float) glm::pow(clamped_lobe_cosine, obj_material.GetShininess()) * light_intensity;
                     specular_contrib += specular_amt;
-                    //std::cout << glm::to_string(specular_amt * obj_material.GetSpecularColor()) << "\n";
                 }
             }
         }
@@ -121,18 +132,59 @@ namespace GLOO {
         diffuse_contrib *= obj_material.GetDiffuseColor();
         specular_contrib *= obj_material.GetSpecularColor();
 
-        glm::vec3 indirect_lighting(0);
+        glm::vec3 indirect_specular(0);
+        glm::vec3 indirect_diffuse(0);
         /// When we add reflection, we allow the ray to move in the new direction
-        if (bounces > 0) {
+        if (bounces_left > 0) {
             Ray reflected_ray(hit_pos + reflected_eye * epsilon_, reflected_eye);
-            HitRecord new_record = HitRecord();
-            indirect_lighting = TraceRay(reflected_ray, bounces - 1, new_record) * obj_material.GetSpecularColor();
-            /// TODO: Also check random directions in hemisphere
-            ///
+            HitRecord specular_record = HitRecord();
+            //indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
+
+            /// Also check random directions in hemisphere
+            HitRecord diffuse_record;
+            Ray sampled_ray = sampleHemisphereRay(hit_pos, surface_normal);
+            float lambert_cosine = glm::dot(sampled_ray.GetDirection(), surface_normal);
+            indirect_diffuse = TraceRay(sampled_ray, bounces_left - 1, diffuse_record) * lambert_cosine * obj_material.GetDiffuseColor(); /// not sure if this is albedo?
+            //std::cout << glm::to_string(indirect_diffuse) << "\n";
         }
-        return ambient_contrib + diffuse_contrib + specular_contrib + indirect_lighting;
+        // cancel the
+        return (ambient_contrib + diffuse_contrib + specular_contrib + indirect_specular) * (sample_pdf_) + indirect_diffuse;
     }
 
+    Ray Tracer::sampleHemisphereRay(glm::vec3 &point, glm::vec3 &normal) const {
+        //std::default_random_engine generator_(time(nullptr));
+        //std::uniform_int_distribution<float> uniform_distribution_(0, 1); /// Not sure how to make it const globally outside?
+        float r1 = rand() / (RAND_MAX + 1.f);// uniform_distribution_(generator_);
+        float r2 = rand() / (RAND_MAX + 1.f); // uniform_distribution_(generator_);
+        glm::vec3 localRay = sampleHemisphere(r1, r2);
+
+        glm::vec3 worldRay = glm::normalize(localPlaneToWorld(point, normal) * localRay); // UNIT vector
+        return Ray(point + epsilon_ * worldRay, worldRay);
+    }
+
+    glm::mat3 Tracer::localPlaneToWorld(glm::vec3 &point, glm::vec3 &normal) const {
+        /// Transform a ray in a local coordinate space to world space using
+        /// the plane defined by normal and point.
+        /// Pick an arbitrary 2nd vector and get the 3rd from cross product
+        glm::vec3 nx = glm::normalize(glm::vec3(normal.z, 0, -normal.x)); // we guarantee n1·normal = 0
+        glm::vec3 nz = glm::cross(nx, normal); // x cross y is z
+        return {nx, normal, nz}; // use the normal as y axis
+    }
+
+    glm::vec3 Tracer::sampleHemisphere(float r1, float r2) const {
+        /// Use inverse CDFs of distributions for phi and theta to map [0, 1] -> angle
+        // theta = cos^-1(1-r1). Let r1 = 1-r1 (symmetric)
+        // cos(theta) = r1
+        // sin(theta) = sqrt(1-r1^2)
+        // phi = 2pi(r2)
+        /// By spherical coordinates:
+        float y = r1;
+        float sin_theta = sqrt(1 - r1 * r1);
+        float phi = 2 * M_PI * r2;
+        float x = sin_theta * cos(phi);
+        float z = sin_theta * sin(phi);
+        return glm::vec3(x, y, z);
+    }
 
     glm::vec3 Tracer::GetBackgroundColor(const glm::vec3 &direction) const {
         if (cube_map_ != nullptr) {

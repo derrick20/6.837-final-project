@@ -4,7 +4,7 @@
 # compile C with /Library/Developer/CommandLineTools/usr/bin/cc
 C_DEFINES = -D_GLFW_USE_CONFIG_H
 
-C_INCLUDES = -I"/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/include" -I"/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2/src" -I"/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/src"
+C_INCLUDES = -I"/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/external/src/glfw-3.3.2/include" -I"/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/external/src/glfw-3.3.2/src" -I"/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/cmake-build-debug/external/src/glfw-3.3.2/src"
 
 C_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -fPIC -Wall -std=gnu99
 

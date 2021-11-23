@@ -1,9 +1,9 @@
 
-if (NOT EXISTS "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/install_manifest.txt")
-  message(FATAL_ERROR "Cannot find install manifest: \"/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/install_manifest.txt\"")
+if (NOT EXISTS "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/cmake-build-debug/external/src/glfw-3.3.2/install_manifest.txt")
+  message(FATAL_ERROR "Cannot find install manifest: \"/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/cmake-build-debug/external/src/glfw-3.3.2/install_manifest.txt\"")
 endif()
 
-file(READ "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/install_manifest.txt" files)
+file(READ "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/cmake-build-debug/external/src/glfw-3.3.2/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 
 foreach (file ${files})

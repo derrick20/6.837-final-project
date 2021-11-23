@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4"
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project"
 -- The C compiler identification is AppleClang 11.0.3.11030032
 -- The CXX compiler identification is AppleClang 11.0.3.11030032
 -- Detecting C compiler ABI info
@@ -14,7 +14,7 @@
 -- Building assignment 4...
 Using CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++
              flags:  -DIMGUI_IMPL_OPENGL_LOADER_GLAD
--- No installed GLFW found in /Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/install/.
+-- No installed GLFW found in /Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/external/install/.
     Include in build.
 -- Looking for pthread.h
 -- Looking for pthread.h - found
@@ -24,4 +24,4 @@ Using CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++
 -- Using Cocoa for window creation
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug
+-- Build files have been written to: /Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/cmake-build-debug

@@ -1,6 +1,7 @@
 #ifndef TRACER_H_
 #define TRACER_H_
 
+#include <random>
 #include "gloo/Scene.hpp"
 #include "gloo/Material.hpp"
 #include "gloo/lights/LightBase.hpp"
@@ -33,22 +34,31 @@ namespace GLOO {
         void Render(const Scene &scene, const std::string &output_file);
 
     private:
-        glm::vec3 TraceRay(const Ray &ray, size_t bounces, HitRecord &record) const;
+        glm::vec3 TraceRay(const Ray &ray, size_t bounces_left, HitRecord &record) const;
 
         int RayIntersection(const Ray &ray, HitRecord &record) const;
 
         glm::vec3 GetBackgroundColor(const glm::vec3 &direction) const;
 
+        Ray sampleHemisphereRay(glm::vec3 &point, glm::vec3 &normal) const;
+
+        glm::vec3 sampleHemisphere(float r1, float r2) const;
+
+        glm::mat3 localPlaneToWorld(glm::vec3 &point, glm::vec3 &normal) const;
+
         PerspectiveCamera camera_;
         glm::ivec2 image_size_;
-        size_t max_bounces_;
 
+        size_t max_bounces_;
         std::vector<TracingComponent *> tracing_components_;
         std::vector<LightComponent *> light_components_;
         glm::vec3 background_color_;
         const CubeMap *cube_map_;
         const float epsilon_ = 1e-2;
+
         bool shadows_enabled_;
+        int N_ = 25;
+        float sample_pdf_ = 1.f / (2.f * M_PI);
 
         const Scene *scene_ptr_;
     };

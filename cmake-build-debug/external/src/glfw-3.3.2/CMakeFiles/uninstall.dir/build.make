@@ -62,10 +62,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4"
+CMAKE_SOURCE_DIR = "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug"
+CMAKE_BINARY_DIR = "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/cmake-build-debug"
 
 # Utility rule file for uninstall.
 
@@ -73,7 +73,7 @@ CMAKE_BINARY_DIR = "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assign
 include external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/progress.make
 
 external/src/glfw-3.3.2/CMakeFiles/uninstall:
-	cd "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P /Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/cmake_uninstall.cmake
+	cd "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/cmake-build-debug/external/src/glfw-3.3.2" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P /Users/derrick/Dropbox\ (MIT)/MIT\ Work/Sophomore/6.837/final-project/6.837-final-project/cmake-build-debug/external/src/glfw-3.3.2/cmake_uninstall.cmake
 
 uninstall: external/src/glfw-3.3.2/CMakeFiles/uninstall
 uninstall: external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/build.make
@@ -86,10 +86,10 @@ external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/build: uninstall
 .PHONY : external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/build
 
 external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/clean:
-	cd "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2" && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
+	cd "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/cmake-build-debug/external/src/glfw-3.3.2" && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
 .PHONY : external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/clean
 
 external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/depend:
-	cd "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4" "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/external/src/glfw-3.3.2" "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug" "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2" "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/assignment4/cmake-build-debug/external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project" "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/external/src/glfw-3.3.2" "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/cmake-build-debug" "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/cmake-build-debug/external/src/glfw-3.3.2" "/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/cmake-build-debug/external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/depend
 
