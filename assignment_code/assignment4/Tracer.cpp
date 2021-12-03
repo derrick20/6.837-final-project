@@ -138,17 +138,19 @@ namespace GLOO {
         if (bounces_left > 0) {
             Ray reflected_ray(hit_pos + reflected_eye * epsilon_, reflected_eye);
             HitRecord specular_record = HitRecord();
-            //indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
+            indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
 
             /// Also check random directions in hemisphere
             HitRecord diffuse_record;
             Ray sampled_ray = sampleHemisphereRay(hit_pos, surface_normal);
             float lambert_cosine = glm::dot(sampled_ray.GetDirection(), surface_normal);
+            //std::cout << "Product" << glm::to_string(lambert_cosine * obj_material.GetDiffuseColor()) << "\n";
             indirect_diffuse = TraceRay(sampled_ray, bounces_left - 1, diffuse_record) * lambert_cosine * obj_material.GetDiffuseColor(); /// not sure if this is albedo?
-            //std::cout << glm::to_string(indirect_diffuse) << "\n";
         }
         // cancel the
-        return (ambient_contrib + diffuse_contrib + specular_contrib + indirect_specular) * (sample_pdf_) + indirect_diffuse;
+        //std::cout << glm::to_string(diffuse_contrib) << " vs " << glm::to_string(indirect_diffuse) << "\n";
+        //return diffuse_contrib + indirect_diffuse;
+        return (ambient_contrib + diffuse_contrib + specular_contrib + indirect_specular) + indirect_diffuse;
     }
 
     Ray Tracer::sampleHemisphereRay(glm::vec3 &point, glm::vec3 &normal) const {

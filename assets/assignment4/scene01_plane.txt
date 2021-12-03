@@ -16,10 +16,8 @@ Materials {
         specular 1 1 1
         shininess 20
     }
-    Material { diffuse 0 1 0 }
-    Material { diffuse 0 0 1 }
     Material {
-        diffuse 1 1 1
+        diffuse 1 0 1
         specular 1 1 1
         shininess 20
     }
@@ -42,39 +40,7 @@ Scene {
         }
     }
     Node {
-        Transform { translate 1 1 1 }
         Component<Material> { index 1 }
-        Component<Object> {
-            type sphere
-            radius 0.75
-        }
-    }
-    Node {
-        Transform { translate -1 -1 -1 }
-        Component<Material> { index 1 }
-        Component<Object> {
-            type sphere
-            radius 0.75
-        }
-    }
-    Node {
-        Transform { translate -1 1 -1 }
-        Component<Material> { index 2 }
-        Component<Object> {
-            type sphere
-            radius 0.75
-        }
-    }
-    Node {
-        Transform { translate 1 -1 -1 }
-        Component<Material> { index 2 }
-        Component<Object> {
-            type sphere
-            radius 0.75
-        }
-    }
-    Node {
-        Component<Material> { index 3 }
         Component<Object> {
             type plane
             normal 0 1 0
