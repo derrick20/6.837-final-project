@@ -135,22 +135,25 @@ namespace GLOO {
         glm::vec3 indirect_specular(0);
         glm::vec3 indirect_diffuse(0);
         /// When we add reflection, we allow the ray to move in the new direction
-        if (bounces_left > 0) {
+        if (bounces_left > 0 && hit_comp <= 1) {
             Ray reflected_ray(hit_pos + reflected_eye * epsilon_, reflected_eye);
             HitRecord specular_record = HitRecord();
-            indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
+            //indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
 
             /// Also check random directions in hemisphere
             HitRecord diffuse_record;
             Ray sampled_ray = sampleHemisphereRay(hit_pos, surface_normal);
             float lambert_cosine = glm::dot(sampled_ray.GetDirection(), surface_normal);
             //std::cout << "Product" << glm::to_string(lambert_cosine * obj_material.GetDiffuseColor()) << "\n";
-            indirect_diffuse = TraceRay(sampled_ray, bounces_left - 1, diffuse_record) * lambert_cosine * obj_material.GetDiffuseColor(); /// not sure if this is albedo?
+            glm::vec3 incoming = TraceRay(sampled_ray, bounces_left - 1, diffuse_record);
+            indirect_diffuse = incoming * lambert_cosine * 0.25f; /// not sure if this is albedo?
+            //std::cout << glm::to_string(incoming) << " " << lambert_cosine << " " << glm::to_string(obj_material.GetDiffuseColor()) << "\n";
+
         }
         // cancel the
         //std::cout << glm::to_string(diffuse_contrib) << " vs " << glm::to_string(indirect_diffuse) << "\n";
         //return diffuse_contrib + indirect_diffuse;
-        return (ambient_contrib + diffuse_contrib + specular_contrib + indirect_specular) + indirect_diffuse;
+        return (ambient_contrib + diffuse_contrib) + indirect_diffuse;
     }
 
     Ray Tracer::sampleHemisphereRay(glm::vec3 &point, glm::vec3 &normal) const {
@@ -158,10 +161,13 @@ namespace GLOO {
         //std::uniform_int_distribution<float> uniform_distribution_(0, 1); /// Not sure how to make it const globally outside?
         float r1 = rand() / (RAND_MAX + 1.f);// uniform_distribution_(generator_);
         float r2 = rand() / (RAND_MAX + 1.f); // uniform_distribution_(generator_);
-        glm::vec3 localRay = sampleHemisphere(r1, r2);
+        glm::vec3 sampledRay = sampleHemisphere(r1, r2);
 
-        glm::vec3 worldRay = glm::normalize(localPlaneToWorld(point, normal) * localRay); // UNIT vector
-        return Ray(point + epsilon_ * worldRay, worldRay);
+        //glm::vec3 worldRay = glm::normalize(localPlaneToWorld(point, normal) * localRay); // UNIT vector
+        if (glm::dot(sampledRay, normal) < 0) {
+            sampledRay -= 2 * glm::dot(sampledRay, normal) * normal;
+        }
+        return Ray(point + epsilon_ * sampledRay, sampledRay);
     }
 
     glm::mat3 Tracer::localPlaneToWorld(glm::vec3 &point, glm::vec3 &normal) const {
@@ -174,17 +180,24 @@ namespace GLOO {
     }
 
     glm::vec3 Tracer::sampleHemisphere(float r1, float r2) const {
+        /// New method: just pick phi and theta
+        float theta = 2 * M_PI * r1;
+        float phi = acos(2 * r2 - 1);
+        float x = sin(phi) * cos(theta);
+        float y = sin(phi) * sin(theta);
+        float z = cos(phi);
+
         /// Use inverse CDFs of distributions for phi and theta to map [0, 1] -> angle
         // theta = cos^-1(1-r1). Let r1 = 1-r1 (symmetric)
         // cos(theta) = r1
         // sin(theta) = sqrt(1-r1^2)
         // phi = 2pi(r2)
         /// By spherical coordinates:
-        float y = r1;
-        float sin_theta = sqrt(1 - r1 * r1);
-        float phi = 2 * M_PI * r2;
-        float x = sin_theta * cos(phi);
-        float z = sin_theta * sin(phi);
+        //float y = r1;
+        //float sin_theta = sqrt(1 - r1 * r1);
+        //float phi = 2 * M_PI * r2;
+        //float x = sin_theta * cos(phi);
+        //float z = sin_theta * sin(phi);
         return glm::vec3(x, y, z);
     }
 

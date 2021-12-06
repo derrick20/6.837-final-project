@@ -57,7 +57,7 @@ namespace GLOO {
         const float epsilon_ = 1e-2;
 
         bool shadows_enabled_;
-        int N_ = 10;
+        int N_ = 200;
         float sample_pdf_ = 1.f / (2.f * M_PI);
 
         const Scene *scene_ptr_;
