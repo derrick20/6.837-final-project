@@ -20,6 +20,9 @@ namespace GLOO {
         tracing_components_ = root.GetComponentPtrsInChildren<TracingComponent>();
         light_components_ = root.GetComponentPtrsInChildren<LightComponent>();
 
+        kernel_ = {1, 4, 7, 4, 1};
+        //kernel_ = {0, 0, 1, 0, 0};
+
         /// Goal is to estimate the integral of the light transport function
         /// The Monte Carlo Estimator will have expectation equal to the integral,
         /// Use N_ trials
@@ -27,7 +30,12 @@ namespace GLOO {
         /// Considering the solid angles, the total hemisphere surface area is 2pi,
         /// and we want a uniform distribution over it -> sample_pdf_ = 1/2pi
         Image image(image_size_.x, image_size_.y);
+        Image preImage(image_size_.x, image_size_.y);
+        std::vector<std::vector<int>> pixelPlane(image_size_.x, std::vector<int>(image_size_.y));
+
+        float focusLower = 8, focusUpper = 12;
         // For each pixel, cast a ray, and update its value in the image.
+
         for (size_t y = 0; y < image_size_.y; y++) {
             for (size_t x = 0; x < image_size_.x; x++) {
                 // Transforms the pixel to [-1, 1] x [-1, 1]
@@ -36,17 +44,72 @@ namespace GLOO {
 
                 Ray ray = camera_.GenerateRay(glm::vec2(x_coord, y_coord));
                 glm::vec3 estimated_color(0);
+                glm::vec3 hit_pos;
                 for (int trial = 0; trial < N_; trial++) {
                     HitRecord record;
                     glm::vec3 color = TraceRay(ray, max_bounces_, record);
                     estimated_color += color;
+                    hit_pos = ray.At(record.time);
                 }
-                estimated_color /= (float) N_ * sample_pdf_;
-                image.SetPixel(x, y, estimated_color);
+                estimated_color /= (float) N_;// * sample_pdf_;
+
+                preImage.SetPixel(x, y, estimated_color);
+                float dist = glm::distance(camera_.center_, hit_pos);
+                pixelPlane[x][y] = focusLower <= dist && dist <= focusUpper ? 1 :
+                                                         (dist < focusLower ? 0 : 2);
             }
         }
         if (output_file.size()) {
+            preImage.SavePNG("PreImage" + output_file);
+            BlurImage(image, preImage, pixelPlane);
             image.SavePNG(output_file);
+        }
+    }
+
+    void Tracer::BlurImage(Image &resImage, Image &preImage, std::vector<std::vector<int>> &pixelPlane) {
+        /// Gaussian Blur, clever two passes to reduce a factor of k (kernel size)
+        size_t offset = kernel_.size() / 2; // radius basically
+        Image intermImage(image_size_.x, image_size_.y);
+
+        for (size_t y = 0; y < image_size_.y; y++) {
+            for (size_t x = 0; x < image_size_.x; x++) {
+                if (pixelPlane[x][y] == 1) {
+                        intermImage.SetPixel(x, y, preImage.GetPixel(x, y));
+                } else {
+                    glm::vec3 contrib(0);
+                    float totalWeight = 0;
+                    for (size_t k = 0; k < kernel_.size(); k++) {
+                        size_t x2 = x + k - offset;
+                        if (0 <= x2 && x2 < image_size_.x && pixelPlane[x2][y] == pixelPlane[x][y]) {
+                            //std::cout << glm::to_string(preImage.GetPixel(x2, y)) << "\n";
+
+                            contrib += kernel_[k] * preImage.GetPixel(x2, y);
+                            totalWeight += kernel_[k];
+                        }
+                    }
+                    //std::cout << glm::to_string(contrib / totalWeight) << " vs " << glm::to_string(preImage.GetPixel(x, y)) << "\n";
+                    intermImage.SetPixel(x, y, contrib / totalWeight);
+                }
+            }
+        }
+        intermImage.SavePNG("intermediateImage.png");
+        for (size_t y = 0; y < image_size_.y; y++) {
+            for (size_t x = 0; x < image_size_.x; x++) {
+                if (pixelPlane[x][y] == 1) {
+                    resImage.SetPixel(x, y, intermImage.GetPixel(x, y));
+                } else {
+                    glm::vec3 contrib(0);
+                    float totalWeight = 0;
+                    for (size_t k = 0; k < kernel_.size(); k++) {
+                        size_t y2 = y + k - offset;
+                        if (0 <= y2 && y2 < image_size_.y && pixelPlane[x][y2] == pixelPlane[x][y]) {
+                            contrib += kernel_[k] * intermImage.GetPixel(x, y2); // Apply along the OTHER direction
+                            totalWeight += kernel_[k];
+                        }
+                    }
+                    resImage.SetPixel(x, y, contrib / totalWeight);
+                }
+            }
         }
     }
 
@@ -94,7 +157,6 @@ namespace GLOO {
                 /// We simply collect all light intensities (colors)
                 /// We always do this because ambient light supposedly can enter from any direction
                 ambient_contrib += ambient_light_ptr->GetAmbientColor();
-                //std::cout << glm::to_string(ambient_contrib) << "\n";
             } else {
                 glm::vec3 dir_to_light, light_intensity;
                 float dist_to_light;
@@ -138,7 +200,7 @@ namespace GLOO {
         if (bounces_left > 0 && hit_comp <= 1) {
             Ray reflected_ray(hit_pos + reflected_eye * epsilon_, reflected_eye);
             HitRecord specular_record = HitRecord();
-            //indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
+            indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
 
             /// Also check random directions in hemisphere
             HitRecord diffuse_record;
@@ -153,7 +215,8 @@ namespace GLOO {
         // cancel the
         //std::cout << glm::to_string(diffuse_contrib) << " vs " << glm::to_string(indirect_diffuse) << "\n";
         //return diffuse_contrib + indirect_diffuse;
-        return (ambient_contrib + diffuse_contrib) + indirect_diffuse;
+        //return (ambient_contrib + diffuse_contrib) + indirect_diffuse;
+        return (ambient_contrib + diffuse_contrib + indirect_specular + specular_contrib) + indirect_diffuse;
     }
 
     Ray Tracer::sampleHemisphereRay(glm::vec3 &point, glm::vec3 &normal) const {
@@ -162,8 +225,6 @@ namespace GLOO {
         float r1 = rand() / (RAND_MAX + 1.f);// uniform_distribution_(generator_);
         float r2 = rand() / (RAND_MAX + 1.f); // uniform_distribution_(generator_);
         glm::vec3 sampledRay = sampleHemisphere(r1, r2);
-
-        //glm::vec3 worldRay = glm::normalize(localPlaneToWorld(point, normal) * localRay); // UNIT vector
         if (glm::dot(sampledRay, normal) < 0) {
             sampledRay -= 2 * glm::dot(sampledRay, normal) * normal;
         }
@@ -186,18 +247,6 @@ namespace GLOO {
         float x = sin(phi) * cos(theta);
         float y = sin(phi) * sin(theta);
         float z = cos(phi);
-
-        /// Use inverse CDFs of distributions for phi and theta to map [0, 1] -> angle
-        // theta = cos^-1(1-r1). Let r1 = 1-r1 (symmetric)
-        // cos(theta) = r1
-        // sin(theta) = sqrt(1-r1^2)
-        // phi = 2pi(r2)
-        /// By spherical coordinates:
-        //float y = r1;
-        //float sin_theta = sqrt(1 - r1 * r1);
-        //float phi = 2 * M_PI * r2;
-        //float x = sin_theta * cos(phi);
-        //float z = sin_theta * sin(phi);
         return glm::vec3(x, y, z);
     }
 

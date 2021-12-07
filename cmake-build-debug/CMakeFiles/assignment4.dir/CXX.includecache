@@ -1582,10 +1582,6 @@ memory
 glad/glad.h
 -
 
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/ArgParser.hpp
-string
--
-
 /Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/CameraSpec.hpp
 glm/glm.hpp
 -
@@ -1635,20 +1631,6 @@ glm/glm.hpp
 -
 glm/gtx/string_cast.hpp
 -
-
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/SceneParser.hpp
-fstream
--
-gloo/Scene.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/Scene.hpp
-gloo/Material.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/Material.hpp
-gloo/components/CameraComponent.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/components/CameraComponent.hpp
-CubeMap.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/CubeMap.hpp
-CameraSpec.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/CameraSpec.hpp
 
 /Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/Tracer.cpp
 Tracer.hpp
@@ -1707,26 +1689,4 @@ Ray.hpp
 /Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/hittable/Ray.hpp
 HitRecord.hpp
 /Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/hittable/HitRecord.hpp
-
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/hittable/Sphere.hpp
-HittableBase.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/hittable/HittableBase.hpp
-
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/main.cpp
-iostream
--
-chrono
--
-gloo/Scene.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/Scene.hpp
-gloo/components/MaterialComponent.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/gloo/components/MaterialComponent.hpp
-hittable/Sphere.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/hittable/Sphere.hpp
-Tracer.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/Tracer.hpp
-SceneParser.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/SceneParser.hpp
-ArgParser.hpp
-/Users/derrick/Dropbox (MIT)/MIT Work/Sophomore/6.837/final-project/6.837-final-project/assignment_code/assignment4/ArgParser.hpp
 

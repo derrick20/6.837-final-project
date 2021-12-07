@@ -57,10 +57,14 @@ namespace GLOO {
         const float epsilon_ = 1e-2;
 
         bool shadows_enabled_;
-        int N_ = 200;
+        int N_ = 1;
         float sample_pdf_ = 1.f / (2.f * M_PI);
 
         const Scene *scene_ptr_;
+
+        void BlurImage(Image &resImage, Image &preImage, std::vector<std::vector<int>> &pixelPlane);
+
+        std::vector<float> kernel_;
     };
 }  // namespace GLOO
 

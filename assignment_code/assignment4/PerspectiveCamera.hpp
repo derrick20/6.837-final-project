@@ -33,8 +33,9 @@ namespace GLOO {
             return 0.0f;
         }
 
-    private:
         glm::vec3 center_;
+
+    private:
         glm::vec3 direction_;
         glm::vec3 up_;
         float fov_radian_;
