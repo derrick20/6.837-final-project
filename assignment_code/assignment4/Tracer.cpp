@@ -33,7 +33,7 @@ namespace GLOO {
         Image preImage(image_size_.x, image_size_.y);
         std::vector<std::vector<int>> pixelPlane(image_size_.x, std::vector<int>(image_size_.y));
 
-        float focusLower = 8, focusUpper = 12;
+        float focusLower = 0, focusUpper = 12;
         // For each pixel, cast a ray, and update its value in the image.
 
         for (size_t y = 0; y < image_size_.y; y++) {
@@ -51,7 +51,7 @@ namespace GLOO {
                     estimated_color += color;
                     hit_pos = ray.At(record.time);
                 }
-                estimated_color /= (float) N_;// * sample_pdf_;
+                estimated_color /= (float) N_ * sample_pdf_;
 
                 preImage.SetPixel(x, y, estimated_color);
                 float dist = glm::distance(camera_.center_, hit_pos);
@@ -181,8 +181,15 @@ namespace GLOO {
                     /// (imagine the surface will scatter the result in all directions)
                     float clamped_lambert = glm::max(0.f, glm::dot(surface_normal, dir_to_light));
                     diffuse_contrib += clamped_lambert * light_intensity;
-
-                    /// Get the amount of light proportional to how close it is the the specular lobe
+                    // glm::vec3 specular_amt(0.0f);
+                    // if (hit_comp == 0){
+                    //     specular_amt = reflected_eye;
+                    // } else {
+                    //     /// Get the amount of light proportional to how close it is the the specular lobe
+                    //     float clamped_lobe_cosine = glm::max(0.f, glm::dot(reflected_eye, dir_to_light)); // both have magnitude 1
+                    //     specular_amt = (float) glm::pow(clamped_lobe_cosine, obj_material.GetShininess()) * light_intensity;
+                    // }
+                    // /// Get the amount of light proportional to how close it is the the specular lobe
                     float clamped_lobe_cosine = glm::max(0.f, glm::dot(reflected_eye, dir_to_light)); // both have magnitude 1
                     glm::vec3 specular_amt = (float) glm::pow(clamped_lobe_cosine, obj_material.GetShininess()) * light_intensity;
                     specular_contrib += specular_amt;
@@ -200,7 +207,15 @@ namespace GLOO {
         if (bounces_left > 0 && hit_comp <= 1) {
             Ray reflected_ray(hit_pos + reflected_eye * epsilon_, reflected_eye);
             HitRecord specular_record = HitRecord();
-            indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
+
+            if (hit_comp == 0){
+                indirect_specular = 0.8f * TraceRay(reflected_ray, bounces_left - 1, specular_record);
+                // indirect_specular = glm::vec3(0.0f);
+                specular_contrib = glm::vec3(0.0f);
+            } else {
+                indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
+            }
+            // indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
 
             /// Also check random directions in hemisphere
             HitRecord diffuse_record;
@@ -210,13 +225,16 @@ namespace GLOO {
             glm::vec3 incoming = TraceRay(sampled_ray, bounces_left - 1, diffuse_record);
             indirect_diffuse = incoming * lambert_cosine * 0.25f; /// not sure if this is albedo?
             //std::cout << glm::to_string(incoming) << " " << lambert_cosine << " " << glm::to_string(obj_material.GetDiffuseColor()) << "\n";
+            // std::cout << "Hit_Comp: " << hit_comp << " " << "Indirect_specular: " << glm::to_string(indirect_specular) << " " << "Specular_contrib: " << glm::to_string(specular_contrib) << "\n";
 
         }
         // cancel the
         //std::cout << glm::to_string(diffuse_contrib) << " vs " << glm::to_string(indirect_diffuse) << "\n";
         //return diffuse_contrib + indirect_diffuse;
-        //return (ambient_contrib + diffuse_contrib) + indirect_diffuse;
+        // return (ambient_contrib + diffuse_contrib) + indirect_diffuse;
         return (ambient_contrib + diffuse_contrib + indirect_specular + specular_contrib) + indirect_diffuse;
+        // return (ambient_contrib + diffuse_contrib + specular_contrib) + indirect_diffuse;
+
     }
 
     Ray Tracer::sampleHemisphereRay(glm::vec3 &point, glm::vec3 &normal) const {
