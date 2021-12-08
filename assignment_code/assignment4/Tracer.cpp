@@ -200,6 +200,9 @@ namespace GLOO {
         ambient_contrib *= obj_material.GetDiffuseColor(); /// KEY BUG, not AmbientColor!
         diffuse_contrib *= obj_material.GetDiffuseColor();
         specular_contrib *= obj_material.GetSpecularColor();
+        if (hit_comp == 0) {
+            specular_contrib = glm::vec3(0.0f);
+        }
 
         glm::vec3 indirect_specular(0);
         glm::vec3 indirect_diffuse(0);
@@ -209,11 +212,10 @@ namespace GLOO {
             HitRecord specular_record = HitRecord();
 
             if (hit_comp == 0){
-                indirect_specular = 0.8f * TraceRay(reflected_ray, bounces_left - 1, specular_record);
-                // indirect_specular = glm::vec3(0.0f);
-                specular_contrib = glm::vec3(0.0f);
+                indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record);
+                //indirect_specular = glm::vec3(0.0f);
             } else {
-                indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
+                indirect_specular = glm::vec3(0.0f); //TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
             }
             // indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
 
@@ -226,13 +228,12 @@ namespace GLOO {
             indirect_diffuse = incoming * lambert_cosine * 0.25f; /// not sure if this is albedo?
             //std::cout << glm::to_string(incoming) << " " << lambert_cosine << " " << glm::to_string(obj_material.GetDiffuseColor()) << "\n";
             // std::cout << "Hit_Comp: " << hit_comp << " " << "Indirect_specular: " << glm::to_string(indirect_specular) << " " << "Specular_contrib: " << glm::to_string(specular_contrib) << "\n";
-
         }
         // cancel the
         //std::cout << glm::to_string(diffuse_contrib) << " vs " << glm::to_string(indirect_diffuse) << "\n";
         //return diffuse_contrib + indirect_diffuse;
-        // return (ambient_contrib + diffuse_contrib) + indirect_diffuse;
-        return (ambient_contrib + diffuse_contrib + indirect_specular + specular_contrib) + indirect_diffuse;
+         return (ambient_contrib + diffuse_contrib + indirect_specular) + indirect_diffuse;
+        //return (ambient_contrib + diffuse_contrib + indirect_specular + specular_contrib) + indirect_diffuse;
         // return (ambient_contrib + diffuse_contrib + specular_contrib) + indirect_diffuse;
 
     }
