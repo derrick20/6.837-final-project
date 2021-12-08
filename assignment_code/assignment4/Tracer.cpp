@@ -32,8 +32,9 @@ namespace GLOO {
         Image image(image_size_.x, image_size_.y);
         Image preImage(image_size_.x, image_size_.y);
         std::vector<std::vector<int>> pixelPlane(image_size_.x, std::vector<int>(image_size_.y));
+        std::vector<std::vector<float>> pixelDist(image_size_.x, std::vector<float>(image_size_.y));
 
-        float focusLower = 0, focusUpper = 12;
+        float focusLower_ = 8, focusUpper_ = 8;
         // For each pixel, cast a ray, and update its value in the image.
 
         for (size_t y = 0; y < image_size_.y; y++) {
@@ -51,22 +52,25 @@ namespace GLOO {
                     estimated_color += color;
                     hit_pos = ray.At(record.time);
                 }
-                estimated_color /= (float) N_ * sample_pdf_;
+                estimated_color /= (float) N_; //* sample_pdf_;
 
                 preImage.SetPixel(x, y, estimated_color);
                 float dist = glm::distance(camera_.center_, hit_pos);
-                pixelPlane[x][y] = focusLower <= dist && dist <= focusUpper ? 1 :
-                                                         (dist < focusLower ? 0 : 2);
+                pixelDist[x][y] = dist;
+                pixelPlane[x][y] = focusLower_ <= dist && dist <= focusUpper_ ? 1 :
+                                                         (dist < focusLower_ ? 0 : 2);
             }
         }
         if (output_file.size()) {
             preImage.SavePNG("PreImage" + output_file);
-            BlurImage(image, preImage, pixelPlane);
+            // image = preImage;
+            // image.SavePNG(output_file);
+            BlurImage(image, preImage, pixelPlane, pixelDist);
             image.SavePNG(output_file);
         }
     }
 
-    void Tracer::BlurImage(Image &resImage, Image &preImage, std::vector<std::vector<int>> &pixelPlane) {
+    void Tracer::BlurImage(Image &resImage, Image &preImage, std::vector<std::vector<int>> &pixelPlane, std::vector<std::vector<float>> &pixelDist) {
         /// Gaussian Blur, clever two passes to reduce a factor of k (kernel size)
         size_t offset = kernel_.size() / 2; // radius basically
         Image intermImage(image_size_.x, image_size_.y);
@@ -81,18 +85,15 @@ namespace GLOO {
                     for (size_t k = 0; k < kernel_.size(); k++) {
                         size_t x2 = x + k - offset;
                         if (0 <= x2 && x2 < image_size_.x && pixelPlane[x2][y] == pixelPlane[x][y]) {
-                            //std::cout << glm::to_string(preImage.GetPixel(x2, y)) << "\n";
-
                             contrib += kernel_[k] * preImage.GetPixel(x2, y);
                             totalWeight += kernel_[k];
                         }
                     }
-                    //std::cout << glm::to_string(contrib / totalWeight) << " vs " << glm::to_string(preImage.GetPixel(x, y)) << "\n";
                     intermImage.SetPixel(x, y, contrib / totalWeight);
                 }
             }
         }
-        intermImage.SavePNG("intermediateImage.png");
+        //intermImage.SavePNG("intermediateImage.png");
         for (size_t y = 0; y < image_size_.y; y++) {
             for (size_t x = 0; x < image_size_.x; x++) {
                 if (pixelPlane[x][y] == 1) {
@@ -107,7 +108,13 @@ namespace GLOO {
                             totalWeight += kernel_[k];
                         }
                     }
-                    resImage.SetPixel(x, y, contrib / totalWeight);
+                    /// Interpolate how much of the original image we weigh towards based on dist from focus plane
+                    float distFromFocus = pixelPlane[x][y] == 0 ? focusLower_ - pixelDist[x][y]
+                                                                : pixelDist[x][y] - focusUpper_;
+                    float blurProportion = fmin(1.f, distFromFocus / 1.5f);
+                    glm::vec3 blurredPixel = contrib / totalWeight;
+                    glm::vec3 interpolatedPixel = blurProportion * blurredPixel + (1.f - blurProportion) * preImage.GetPixel(x, y);
+                    resImage.SetPixel(x, y, interpolatedPixel);
                 }
             }
         }
@@ -211,13 +218,16 @@ namespace GLOO {
             Ray reflected_ray(hit_pos + reflected_eye * epsilon_, reflected_eye);
             HitRecord specular_record = HitRecord();
 
+            // Sphere hard-code
             if (hit_comp == 0){
                 indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record);
                 //indirect_specular = glm::vec3(0.0f);
             } else {
                 indirect_specular = glm::vec3(0.0f); //TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
             }
-            // indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
+
+            // Bunny indirect_specular
+            indirect_specular = TraceRay(reflected_ray, bounces_left - 1, specular_record) * obj_material.GetSpecularColor();
 
             /// Also check random directions in hemisphere
             HitRecord diffuse_record;
@@ -225,15 +235,15 @@ namespace GLOO {
             float lambert_cosine = glm::dot(sampled_ray.GetDirection(), surface_normal);
             //std::cout << "Product" << glm::to_string(lambert_cosine * obj_material.GetDiffuseColor()) << "\n";
             glm::vec3 incoming = TraceRay(sampled_ray, bounces_left - 1, diffuse_record);
-            indirect_diffuse = incoming * lambert_cosine * 0.25f; /// not sure if this is albedo?
+            indirect_diffuse = incoming * lambert_cosine * 0.75f; /// not sure if this is albedo?
             //std::cout << glm::to_string(incoming) << " " << lambert_cosine << " " << glm::to_string(obj_material.GetDiffuseColor()) << "\n";
             // std::cout << "Hit_Comp: " << hit_comp << " " << "Indirect_specular: " << glm::to_string(indirect_specular) << " " << "Specular_contrib: " << glm::to_string(specular_contrib) << "\n";
         }
         // cancel the
         //std::cout << glm::to_string(diffuse_contrib) << " vs " << glm::to_string(indirect_diffuse) << "\n";
         //return diffuse_contrib + indirect_diffuse;
-         return (ambient_contrib + diffuse_contrib + indirect_specular) + indirect_diffuse;
-        //return (ambient_contrib + diffuse_contrib + indirect_specular + specular_contrib) + indirect_diffuse;
+        // return (ambient_contrib + diffuse_contrib + indirect_specular) + indirect_diffuse;
+        return (ambient_contrib + diffuse_contrib + indirect_specular + specular_contrib) + indirect_diffuse;
         // return (ambient_contrib + diffuse_contrib + specular_contrib) + indirect_diffuse;
 
     }

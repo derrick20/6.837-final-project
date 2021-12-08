@@ -59,10 +59,11 @@ namespace GLOO {
         bool shadows_enabled_;
         int N_ = 100;
         float sample_pdf_ = 1.f / (2.f * M_PI);
+        float focusLower_, focusUpper_;
 
         const Scene *scene_ptr_;
 
-        void BlurImage(Image &resImage, Image &preImage, std::vector<std::vector<int>> &pixelPlane);
+        void BlurImage(Image &resImage, Image &preImage, std::vector<std::vector<int>> &pixelPlane, std::vector<std::vector<float>> &pixelDist);
 
         std::vector<float> kernel_;
     };
